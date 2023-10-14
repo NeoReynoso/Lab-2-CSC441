@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    
+    
+    <form name="validatingForm" action="lab2-5.html" method="get" onsubmit="return validateForm()">
+        <label for="message">Enter message:</label>
+        <input type="text" id="message" name="message" value="">
+       <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            // Get input element by ID
+            var messageInput = document.getElementById("message");
+            // Get  error span element by ID
+            var errorMessage = document.getElementById("errorMessage");
+
+            // Check if the message input is empty
+            if (messageInput.value.trim() === "") {
+                // Display an error message
+                errorMessage.textContent = "Please enter a message.";
+                return false; // Prevents the form submission
+            } else {
+                // Clear previous error message
+                errorMessage.textContent = "";
+                return true; // Allow form submission
+            }
+        }
+    </script>
+</body>
+</html>
+
+</html>
+
+

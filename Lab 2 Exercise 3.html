@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Click Me!</title>
+    <script>
+        function clickHandler() {
+       
+            var messageElement = document.getElementById("message");
+
+            
+            messageElement.innerHTML = "<h1>Clicked!</h1>";
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Click me!" onclick="clickHandler()">
+    <div id="message"></div>
+</body>
+</html>

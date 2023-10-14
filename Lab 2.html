@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+</head>
+<body>
+    <form action="lab3-3.html" method="get" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required pattern="^[A-Za-z ]+$">
+        <br>
+        
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        
+        <label for="year">Year (2000-2050):</label>
+        <input type="number" id="year" name="year" required min="2000" max="2050">
+        <br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const yearInput = document.getElementById('year');
+            
+            if (!nameInput.checkValidity()) {
+                alert('Please enter a valid name (letters and spaces only).');
+                return false;
+            }
+
+            if (!emailInput.checkValidity()) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            if (!yearInput.checkValidity()) {
+                alert('Please enter a valid year (between 2000 and 2050).');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
